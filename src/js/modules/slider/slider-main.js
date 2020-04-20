@@ -1,11 +1,9 @@
-export default class Slider {
-  constructor(container, buttons) {
-    this.page = document.querySelector(container);
-    this.slides = this.page.children;
-    this.buttons = document.querySelectorAll(buttons);
-    this.slideIndex = 1;
+import Slider from './slider';
+
+export default class MainSlider extends Slider {
+  constructor(btns) {
+    super(btns);
   }
-  // метод для определения позиции слайдов 
   showSlides(n) {
     if(n > this.slides.length) {
       this.slideIndex = 1;
@@ -55,4 +53,3 @@ export default class Slider {
     this.showSlides(this.slideIndex);
   }
 }
-
